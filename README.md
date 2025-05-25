@@ -1,12 +1,40 @@
-# React + Vite
+# 🎥 Smart Video Progress Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An advanced **React-based video player** that tracks progress in a smart and meaningful way — by counting only **unique watched segments** instead of total time played. It helps users track their actual learning or viewing time even when skipping back and forth through content.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ **Smart progress tracking** — Only counts unique video segments that were actually watched.
+- 🔁 **Overlap-aware tracking** — Automatically merges overlapping intervals to ensure accuracy.
+- 📊 **Visual progress bar** — Highlights watched segments, current position, and unwatched parts.
+- 💾 **Auto-save & resume** — Saves viewing progress to local storage and resumes from the last position.
+- 📈 **Detailed stats** — Shows time watched, progress percentage, and unique segments viewed.
+- 🎛️ **Interactive controls** — Users can seek, pause, reset, or resume progress easily.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧠 How It Works
+
+This app tracks progress not just based on play time, but on **actual content coverage**. Here's how:
+
+- Every time the video plays, the current position is monitored.
+- If the user seeks (jumps) in the video, the segment from start to jump point is saved.
+- All watched segments are stored and **merged** to avoid double-counting.
+- Progress is calculated based on **total unique seconds watched / total duration**.
+
+---
+
+## 📦 Tech Stack
+
+- **React** (Functional components & hooks)
+- **Tailwind CSS** for responsive UI
+- **Lucide Icons** for visual cues
+- **LocalStorage** for persistent progress
+- **Custom hook (`useVideoProgress`)** for handling video state and logic
+
+---
+
+
+
